@@ -42,14 +42,14 @@ class Header extends Component {
                 <Jumbotron fluid>
                     <div className="container">
                         <div className="row">
-                            <div class="col-4 col-sm-3 my-auto d-none d-md-block">
+                            <div className="col-4 col-sm-3 my-auto d-none d-md-block">
                                 <img src="assets/images/pizza.png" alt="Pizza" className="img-fluid"/>
                             </div>
                             <div className="col-sm-5 my-auto mx-auto text-center">
-                                <h1 class="logo">PVD PIZZA COMPANY</h1>
-                                <h2 class="sublogo">A Slice of Rhode Island</h2>
+                                <h1 className="logo">PVD PIZZA COMPANY</h1>
+                                <h2 className="sublogo">A Slice of Rhode Island</h2>
                             </div>
-                            <div class="col-4 col-sm-3 my-auto d-none d-md-block">
+                            <div className="col-4 col-sm-3 my-auto d-none d-md-block">
                                 <img src="assets/images/pizza.png" alt="Pizza" class="img-fluid"/>
                             </div>
                         </div>

@@ -21,7 +21,7 @@ function Home(props) {
                     <Table dark>
                         <thead>
                             <tr>
-                                <th class="TableHeader" colSpan="4">DAILY SPECIALS AND EVENTS</th>
+                                <th className="TableHeader" colSpan="4">DAILY SPECIALS AND EVENTS</th>
                             </tr>
                         </thead>
                         <tbody>

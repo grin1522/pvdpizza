@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 function Footer(props) {
     return (
         <footer className="site-footer">
-            <div class="container">
-            <div class="row text-center text-align-center">             
-                <div class="col-sm-3">
+            <div className="container">
+            <div className="row text-center text-align-center">             
+                <div className="col-sm-3">
                     <h5>Links</h5>
                         <ul className="list-unstyled">
                             <li><Link to='/home'>Home</Link></li>
