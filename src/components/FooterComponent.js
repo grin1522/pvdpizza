@@ -14,7 +14,7 @@ function Footer(props) {
                             <li><Link to='/aboutus'>About</Link></li>
                         </ul>
                 </div>
-                <div class="col-sm-5">
+                <div className="col-sm-5">
                     <h5>Contact</h5>
                     <a role="button" className="btn btn-link" href="tel:+14014937777"><i className="fa fa-phone" /> (401) 493-7777</a>
                     <a role="button" className="btn btn-link" href="mailto:pvdpizzaco@hotmail.com"><i className="fa fa-envelope-o" /> pvdpizzaco@hotmail.com</a><br />
@@ -23,7 +23,7 @@ function Footer(props) {
                     <a className="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter" /></a>{' '}
                     <a className="btn btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube" /></a>
                 </div>
-                <div class="col-sm-4">
+                <div className="col-sm-4">
                     <h5>Hours</h5>
                     Sunday - Thursday: 10AM - 10PM<br/>
                     Friday - Saturday: 10AM - 12PM
