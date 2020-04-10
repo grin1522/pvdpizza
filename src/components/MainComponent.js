@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
+import { fetchAboutInfo } from '../redux/ActionCreators';
 import Home from './HomeComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
-//import About from './AboutComponent';
+import AboutUs from './AboutComponent';
+import AboutInfo from './AboutInfoComponent.js';
 import Menu from './MenuComponent';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
     return {
-        campsites: state.campsites,
-        comments: state.comments,
-        partners: state.partners,
-        promotions: state.promotions
+        aboutInfo: state.aboutInfo
     };
 };
 
+const mapDispatchToProps = {
+    
+    fetchAboutInfo: () => (fetchAboutInfo())
+};
+
 class Main extends Component {
+
+    componentDidMount() {
+        this.props.fetchAboutInfo();
+    }
     
     render() {
         const HomePage = () => {
@@ -25,27 +34,34 @@ class Main extends Component {
             );
         }
 
-        /* const CampsiteWithId = ({match}) => {
+        const AboutInfoWithId = ({match}) => {
             return (
-                <CampsiteInfo 
-                    campsite={this.props.campsites.filter(campsite => campsite.id === +match.params.campsiteId)[0]}
-                    comments={this.props.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)}
-                />
+                <AboutInfo 
+                    info={this.props.aboutInfo.aboutInfo.filter(info => info.id === +match.params.infoID)[0]}
+                    isLoading={this.props.aboutInfo.isLoading}
+                    errMess={this.props.aboutInfo.errMess}
+                />                           
             );
-        };     */
+        };
 
         return (
             <div>
                 <Header />
-                <Switch>
-                    <Route path='/home' component={HomePage} />
-                    <Route exact path='/menu' render={() => <Menu pizza={this.props.pizza} salads={this.props.salads} starters={this.props.starters} toppings={this.props.toppings} />} />
-                    <Redirect to='/home' />
-                </Switch>
+                <TransitionGroup>
+                    <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+                        <Switch>
+                            <Route path='/home' component={HomePage} />
+                            <Route exact path='/menu' render={() => <Menu pizza={this.props.pizza} salads={this.props.salads} starters={this.props.starters} toppings={this.props.toppings} />} />
+                            <Route exact path='/aboutUs' render={() => <AboutUs aboutInfo={this.props.aboutInfo} />} />
+                            <Route path='/aboutUs/:infoID' component={AboutInfoWithId} />
+                            <Redirect to='/home' />
+                        </Switch>
+                    </CSSTransition>
+                </TransitionGroup>
                 <Footer />
             </div>
         );
     }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

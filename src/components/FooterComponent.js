@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Footer(props) {
     return (
-        <footer className="site-footer">
+        <footer className="site-footer pt-3 pb-1">
             <div className="container">
             <div className="row text-center text-align-center">             
                 <div className="col-sm-3">
@@ -14,7 +14,7 @@ function Footer(props) {
                             <li><Link to='/aboutus'>About</Link></li>
                         </ul>
                 </div>
-                <div className="col-sm-5">
+                <div className="col-sm-5 pb-3">
                     <h5>Contact</h5>
                     <a role="button" className="btn btn-link" href="tel:+14014937777"><i className="fa fa-phone" /> (401) 493-7777</a>
                     <a role="button" className="btn btn-link" href="mailto:pvdpizzaco@hotmail.com"><i className="fa fa-envelope-o" /> pvdpizzaco@hotmail.com</a><br />

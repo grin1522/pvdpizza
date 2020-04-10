@@ -1,18 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 
-/* function RenderCard({item}) {
-    return (
-        <Card>
-            <CardImg src={item.image} alt={item.name} />
-            <CardBody>
-                <CardTitle>{item.name}</CardTitle>
-                <CardText>{item.description}</CardText>
-            </CardBody>
-        </Card>
-    );
-} */
-
 function Home(props) {
     return (
         <div className="container">
