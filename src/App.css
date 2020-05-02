@@ -26,7 +26,13 @@ min-height: 200px;
 
 .logo {
   font-family: 'Frijole', cursive;
+  color: #252729;
   text-shadow: 2px 2px #ff0000;
+}
+
+.logo:hover {
+	color: black;
+	text-decoration: none;
 }
 
 .sublogo {
@@ -47,6 +53,13 @@ min-height: 200px;
 .navbar {
   background-color: #252729;
 }
+
+.link {
+	color: #FFF;
+  }
+  .link:hover {
+	 color: #00F
+  }
 
 /* animations */
 .page-enter {

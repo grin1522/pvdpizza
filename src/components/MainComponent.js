@@ -7,7 +7,7 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import AboutUs from './AboutComponent';
 import AboutInfo from './AboutInfoComponent.js';
-import Menu from './MenuComponent';
+import Order from './OrderComponent';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
@@ -51,7 +51,7 @@ class Main extends Component {
                     <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
                         <Switch>
                             <Route path='/home' component={HomePage} />
-                            <Route exact path='/menu' render={() => <Menu pizza={this.props.pizza} salads={this.props.salads} starters={this.props.starters} toppings={this.props.toppings} />} />
+                            <Route exact path='/order' render={() => <Order pizza={this.props.pizza} salads={this.props.salads} starters={this.props.starters} toppings={this.props.toppings} />} />
                             <Route exact path='/aboutUs' render={() => <AboutUs aboutInfo={this.props.aboutInfo} />} />
                             <Route path='/aboutUs/:infoID' component={AboutInfoWithId} />
                             <Redirect to='/home' />

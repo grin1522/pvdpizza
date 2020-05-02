@@ -52,7 +52,7 @@ const AboutUs = (props) => {
                     <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                     <BreadcrumbItem active>About Us</BreadcrumbItem>
                 </Breadcrumb>
-                <div className="col-12">
+                <div className="col-12 text-center">
                     <h3>About Us</h3>
                     <hr />
                 </div>

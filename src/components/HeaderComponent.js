@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import { Navbar, Nav, NavbarToggler, Collapse, NavItem, Jumbotron, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 class Header extends Component {
 
@@ -46,7 +46,7 @@ class Header extends Component {
                                 <img src="assets/images/pizza.png" alt="Pizza" className="img-fluid"/>
                             </div>
                             <div className="col-sm-5 my-auto mx-auto text-center">
-                                <h1 className="logo">PVD PIZZA COMPANY</h1>
+                                <h1><Link to="/" className="logo">PVD PIZZA COMPANY</Link></h1>
                                 <h2 className="sublogo">A Slice of Rhode Island</h2>
                             </div>
                             <div className="col-4 col-sm-3 my-auto d-none d-md-block">
@@ -66,8 +66,8 @@ class Header extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/menu">
-                                        <i className="fa fa-cutlery fa-lg" /> Menu
+                                    <NavLink className="nav-link" to="/order">
+                                        <i className="fa fa-cutlery fa-lg" /> Order
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>

@@ -49,7 +49,7 @@ function AboutInfo(props) {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col">
+                    <div className="col text-center">
                         <Breadcrumb>
                             <BreadcrumbItem><Link to="/aboutUs">About Us</Link></BreadcrumbItem>
                             <BreadcrumbItem active>{props.info.name}</BreadcrumbItem>
