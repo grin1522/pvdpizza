@@ -8,6 +8,7 @@ import Footer from './FooterComponent';
 import AboutUs from './AboutComponent';
 import AboutInfo from './AboutInfoComponent.js';
 import Order from './OrderComponent';
+import Cart from './CartComponent';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
@@ -44,6 +45,12 @@ class Main extends Component {
             );
         };
 
+        const MyCart = () => {
+            return (
+                <Cart />
+            );
+        }
+
         return (
             <div>
                 <Header />
@@ -51,9 +58,10 @@ class Main extends Component {
                     <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
                         <Switch>
                             <Route path='/home' component={HomePage} />
-                            <Route exact path='/order' render={() => <Order pizza={this.props.pizza} salads={this.props.salads} starters={this.props.starters} toppings={this.props.toppings} />} />
                             <Route exact path='/aboutUs' render={() => <AboutUs aboutInfo={this.props.aboutInfo} />} />
                             <Route path='/aboutUs/:infoID' component={AboutInfoWithId} />
+                            <Route exact path='/order' render={() => <Order pizza={this.props.pizza} salads={this.props.salads} starters={this.props.starters} toppings={this.props.toppings} />} />
+                            <Route exact path='/mycart' component={MyCart} />
                             <Redirect to='/home' />
                         </Switch>
                     </CSSTransition>

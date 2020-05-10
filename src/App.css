@@ -17,6 +17,20 @@ h1, h2, h3, .card-body>h5 {
 color: whitesmoke;
 background-color: rgba(0, 0, 0, 0.4);
 }
+
+.card-text {
+	font-size: x-large;
+	font-weight: bolder;
+}
+
+.tab-body {
+	background-color: #252729;
+}
+
+.tab-text {
+	color: whitesmoke;
+	font-weight: bold;
+}
   
 .row-content {
 padding: 50px 0;
