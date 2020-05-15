@@ -1,31 +1,43 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { fetchAboutInfo } from '../redux/ActionCreators';
+import { fetchAboutInfo, fetchPizza, fetchSalads, fetchStarters, fetchToppings } from '../redux/ActionCreators';
 import Home from './HomeComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import AboutUs from './AboutComponent';
 import AboutInfo from './AboutInfoComponent.js';
 import Order from './OrderComponent';
-import Cart from './CartComponent';
+// import Cart from './CartComponent';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const mapStateToProps = state => {
     return {
-        aboutInfo: state.aboutInfo
+        aboutInfo: state.aboutInfo,
+        pizza: state.pizza,
+        salads: state.salads,
+        starters: state.starters,
+        toppings: state.toppings
     };
 };
 
 const mapDispatchToProps = {
     
-    fetchAboutInfo: () => (fetchAboutInfo())
+    fetchAboutInfo: () => (fetchAboutInfo()),
+    fetchPizza: () => (fetchPizza()),
+    fetchSalads: () => (fetchSalads()),
+    fetchStarters: () => (fetchStarters()),
+    fetchToppings: () => (fetchToppings())
 };
 
 class Main extends Component {
 
     componentDidMount() {
         this.props.fetchAboutInfo();
+        this.props.fetchPizza();
+        this.props.fetchSalads();
+        this.props.fetchStarters();
+        this.props.fetchToppings();
     }
     
     render() {
@@ -45,11 +57,11 @@ class Main extends Component {
             );
         };
 
-        const MyCart = () => {
+        /* const MyCart = () => {
             return (
                 <Cart />
             );
-        }
+        } */
 
         return (
             <div>
@@ -61,7 +73,7 @@ class Main extends Component {
                             <Route exact path='/aboutUs' render={() => <AboutUs aboutInfo={this.props.aboutInfo} />} />
                             <Route path='/aboutUs/:infoID' component={AboutInfoWithId} />
                             <Route exact path='/order' render={() => <Order pizza={this.props.pizza} salads={this.props.salads} starters={this.props.starters} toppings={this.props.toppings} />} />
-                            <Route exact path='/mycart' component={MyCart} />
+                            {/* <Route exact path='/mycart' component={MyCart} /> */}
                             <Redirect to='/home' />
                         </Switch>
                     </CSSTransition>

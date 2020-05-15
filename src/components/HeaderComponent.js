@@ -75,11 +75,11 @@ class Header extends Component {
                                         <i className="fa fa-cutlery fa-lg" /> Order
                                     </NavLink>
                                 </NavItem>
-                                <NavItem>
+                                {/* <NavItem>
                                     <NavLink className="nav-link" to="/mycart">
                                         <i className="fa fa-shopping-cart fa-lg" /> My Cart
                                     </NavLink>
-                                </NavItem>
+                                </NavItem> */}
                             </Nav>
                             <span className="navbar-text ml-auto">
                                 <Button outline onClick={this.toggleModal}>
